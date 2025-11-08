@@ -143,6 +143,7 @@ These are Markdown extensions used in GitHub, VS Code, Obsidian, MkDocs, Docusau
 - **Important**
   
 > [!IMPORTANT]
+> 
 > This is an important block. Use it for critical information.
   
 - **Warning**
