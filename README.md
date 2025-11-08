@@ -105,18 +105,18 @@ def hello():
   </details>
 - Emoji (GitHub style): `:smile:` → 😄
 
-## Accessibility and Best Practices
+## 🤝 Accessibility and Best Practices
 - Always include meaningful alt text for images
 - Use headings in logical order
 - Prefer semantic structure over visual tricks
 - Keep lines short for readability
 
-## Platform Notes
+## 💻 Platform Notes
 - GitHub Flavored Markdown supports tables, task lists, mentions, emojis, and reference links.
 - CommonMark is widely used; some platforms extend it.
 - VS Code previews depend on renderer and extensions.
 
-## Quick Cheatsheet
+## 📑 Quick Cheatsheet
 - Bold: `**text**`
 - Italic: `*text*`
 - Inline code: `` `code` ``
