@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📘 Markdown Formatting Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A quick guide to Markdown syntax for formatting text, lists, links, images, code, tables, and callouts.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --code-bg: #f8fafc;
+      --accent: #2563eb;
+      --blockquote: #f3f4f6;
+      --table-stripe: #fafafa;
+      --callout-note: #eaf2ff;
+      --callout-important: #fff4e5;
+      --callout-warning: #fff0f0;
+      --callout-tip: #e9fbef;
+      --callout-caution: #fff7e6;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    header {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text);
+      line-height: 1.25;
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+
+    p, ul, ol {
+      margin: 0.75rem 0;
+    }
+
+    ul, ol {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.95em;
+    }
+
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 0.75rem 0 1rem;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    blockquote {
+      background: var(--blockquote);
+      border-left: 4px solid var(--border);
+      margin: 0.75rem 0;
+      padding: 0.5rem 0.75rem;
+      color: var(--muted);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+    }
+    thead th {
+      background: #f6f8fa;
+      font-weight: 600;
+    }
+    tbody tr:nth-child(odd) {
+      background: var(--table-stripe);
+    }
+
+    details {
+      margin: 0.75rem 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fafafa;
+      padding: 0.5rem 0.75rem;
+    }
+    details > summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .task-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .task-list li {
+      margin: 0.3rem 0;
+    }
+    .task-list input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+
+    .callouts {
+      margin-top: 0.5rem;
+    }
+    .callout {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+      margin: 0.75rem 0;
+    }
+    .callout .title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .callout.note       { background: var(--callout-note); }
+    .callout.important  { background: var(--callout-important); }
+    .callout.warning    { background: var(--callout-warning); }
+    .callout.tip        { background: var(--callout-tip); }
+    .callout.caution    { background: var(--callout-caution); }
+
+    footer {
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Small helper badges */
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.15rem 0.5rem;
+      margin-left: 0.25rem;
+      background: #fbfbfb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📘 Markdown Formatting Reference</h1>
+      <p>A quick guide to Markdown syntax for formatting text, lists, links, images, code, and more.</p>
+    </header>
+
+    <section>
+      <h2>✍️ Text Formatting</h2>
+      <ul>
+        <li><strong>Bold:</strong> <code>**bold**</code> or <code>__bold__</code> → <strong>bold</strong></li>
+        <li><strong>Italic:</strong> <code>*italic*</code> or <code>_italic_</code> → <em>italic</em></li>
+        <li><strong>Bold &amp; Italic:</strong> <code>***bold italic***</code> → <strong><em>bold italic</em></strong></li>
+        <li><strong>Strikethrough:</strong> <code>~~strikethrough~~</code> → <del>strikethrough</del></li>
+        <li><strong>Inline code:</strong> <code>`code`</code> → <code>code</code></li>
+        <li><strong>Blockquote:</strong> <code>&gt; quoted text</code> → <blockquote>quoted text</blockquote></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📋 Lists</h2>
+
+      <h3>Unordered list</h3>
+      <ul>
+        <li>Item A</li>
+        <li>Item B
+          <ul>
+            <li>Subitem B1</li>
+            <li>Subitem B2</li>
+          </ul>
+        </li>
+        <li>Item C</li>
+        <li>Item D</li>
+      </ul>
+
+      <h3>Ordered list</h3>
+      <ol>
+        <li>First</li>
+        <li>Second
+          <ol>
+            <li>Subitem</li>
+            <li>Subitem</li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>🔗 Links and Images</h2>
+      <ul>
+        <li><strong>Link:</strong> <code>[Link text](https://example.com)</code> → <a href="https://example.com" target="_blank" rel="noopener">Link text</a></li>
+        <li><strong>Reference-style link:</strong>
+          <pre><code>[Google][1]
+
+[1]: https://google.com</code></pre>
+        </li>
+        <li><strong>Image:</strong> <code>![Alt text](https://example.com/image.png)</code> → <img src="https://example.com/image.png" alt="Alt text" style="max-width:100%;height:auto;"></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📌 Headings</h2>
+      <pre><code># H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6</code></pre>
+    </section>
+
+    <section>
+      <h2>📐 Horizontal rule</h2>
+      <pre><code>---
+***
+___</code></pre>
+    </section>
+
+    <section>
+      <h2>🧮 Code Blocks</h2>
+
+      <h3>Inline</h3>
+      <p>Use <code>code</code> for inline snippets.</p>
+
+      <h3>Multiline fenced code block (with optional language)</h3>
+      <pre><code class="language-python">def hello():
+    print("Hello, Markdown!")</code></pre>
+
+      <h3>Indented code block (less common)</h3>
+      <pre><code>def hello():
+    print("Indented code block")</code></pre>
+    </section>
+
+    <section>
+      <h2>📊 Tables</h2>
+      <table>
+        <thead>
+          <tr><th>Column A</th><th>Column B</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Value 1</td><td>Value 2</td></tr>
+          <tr><td>Value 3</td><td>Value 4</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>✅ Task Lists</h2>
+      <ul class="task-list">
+        <li><label><input type="checkbox" checked disabled> Completed task</label></li>
+        <li><label><input type="checkbox" disabled> Incomplete task</label></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🔣 Escaping Characters</h2>
+      <pre><code>\*literal asterisks\*
+\# not a heading
+\`not code\`</code></pre>
+    </section>
+
+    <section>
+      <h2>🧩 HTML in Markdown</h2>
+      <pre><code>&lt;b&gt;Bold with HTML&lt;/b&gt;
+&lt;br&gt;
+&lt;span style="color:red"&gt;Red text&lt;/span&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>🧠 Advanced Tricks</h2>
+      <ul>
+        <li>Nesting elements: lists inside blockquotes, code inside lists</li>
+        <li>Combining styles: <code>**_bold italic_**</code> → <strong><em>bold italic</em></strong></li>
+        <li>Footnotes example:
+          <pre><code>This is a statement.[^1]
+
+[^1]: Footnote text.</code></pre>
+        </li>
+        <li>Collapsible sections:</li>
+      </ul>
+      <details>
+        <summary>Click to expand</summary>
+        Content inside the collapsible section.
+      </details>
+      <p>Emoji (GitHub style): <code>:smile:</code> → 😄 <span class="badge">GFM</span></p>
+    </section>
+
+    <section>
+      <h2>Accessibility and best practices</h2>
+      <ul>
+        <li>Always include meaningful alt text for images</li>
+        <li>Use headings in logical order</li>
+        <li>Prefer semantic structure over visual tricks</li>
+        <li>Keep lines short for readability</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Platform notes</h2>
+      <ul>
+        <li>GitHub Flavored Markdown supports tables, task lists, mentions, emojis, and reference links.</li>
+        <li>CommonMark is widely used; some platforms extend it.</li>
+        <li>VS Code previews depend on renderer and extensions.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Quick cheatsheet</h2>
+      <ul>
+        <li><strong>Bold:</strong> <code>**text**</code></li>
+        <li><strong>Italic:</strong> <code>*text*</code></li>
+        <li><strong>Inline code:</strong> <code>`code`</code></li>
+        <li><strong>Code block:</strong> <code> ```lang ... ``` </code></li>
+        <li><strong>Link:</strong> <code>[text](url)</code></li>
+        <li><strong>Image:</strong> <code>![alt](url)</code></li>
+        <li><strong>List:</strong> <code>- item</code> or <code>1. item</code></li>
+        <li><strong>Table:</strong> <code>| a | b |</code></li>
+        <li><strong>Blockquote:</strong> <code>&gt; quote</code></li>
+        <li><strong>Horizontal rule:</strong> <code>---</code></li>
+        <li><strong>Task:</strong> <code>- [ ] task</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📦 Admonition &amp; callout blocks</h2>
+      <p>These are Markdown extensions used in GitHub, VS Code, Obsidian, MkDocs, Docusaurus, etc. The HTML below shows the Markdown syntax itself as code samples.</p>
+
+      <h3>🔔 Common block types</h3>
+
+      <div class="callouts">
+        <div class="callout note">
+          <div class="title">Note</div>
+          <pre><code>&gt; [!NOTE]
+&gt; 
+&gt; This is a note block. Use it for general tips or reminders.</code></pre>
+        </div>
+
+        <div class="callout important">
+          <div class="title">Important</div>
+          <pre><code>&gt; [!IMPORTANT]
+&gt; This is an important block. Use it for critical information.</code></pre>
+        </div>
+
+        <div class="callout warning">
+          <div class="title">Warning</div>
+          <pre><code>&gt; [!WARNING]
+&gt; 
+&gt; This is a warning block. Use it for cautions or potential issues.</code></pre>
+        </div>
+
+        <div class="callout tip">
+          <div class="title">Tip</div>
+          <pre><code>&gt; [!TIP]
+&gt; 
+&gt; This is a tip block. Use it for helpful suggestions.</code></pre>
+        </div>
+
+        <div class="callout caution">
+          <div class="title">Caution</div>
+          <pre><code>&gt; [!CAUTION]
+&gt; 
+&gt; This is a caution block. Use it for things that could go wrong.</code></pre>
+        </div>
+      </div>
+
+      <h3>🛠️ Notes on usage</h3>
+      <ul>
+        <li>In <strong>GitHub Markdown</strong>, these render as styled callouts.</li>
+        <li>In <strong>VS Code Markdown Preview Enhanced</strong>, they also work.</li>
+        <li>In <strong>MkDocs/Docusaurus</strong>, admonitions may use <code>!!! note</code> or <code>:::note</code> instead.</li>
+        <li>Always check your platform’s documentation for exact syntax.</li>
+      </ul>
+
+      <h3>📑 Cheatsheet</h3>
+      <pre><code>&gt; [!NOTE]      → General info
+&gt; [!IMPORTANT] → Critical info
+&gt; [!WARNING]   → Cautionary info
+&gt; [!TIP]       → Helpful suggestion
+&gt; [!CAUTION]   → Potential danger
+&gt; [!EXAMPLE]   → Illustrative example</code></pre>
+    </section>
+
+    <section>
+      <h2>Further customization</h2>
+      <p>See the project GitHub: <a href="https://github.com/NoahDomingues/Glasgow-Uni-Notes" target="_blank" rel="noopener"><strong>Glasgow-Uni-Notes</strong></a></p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Noah Domingues — Markdown reference for GitHub Pages.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Update year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
