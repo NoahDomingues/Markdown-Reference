@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>📘 Markdown Formatting Reference</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A quick guide to Markdown syntax for formatting text, lists, links, images, code, tables, and callouts.">
+  <meta name="description" content="A quick guide to Markdown syntax for formatting text, lists, links, images, code, tables, badges, and callouts.">
   <meta name="color-scheme" content="dark">
   <style>
     :root {
@@ -64,6 +64,7 @@
       background: var(--panel);
       box-shadow: var(--shadow);
       overflow: hidden;
+      text-align: center; /* Center title and subheading */
     }
     header::before {
       content: "";
@@ -77,6 +78,9 @@
     header h1, header p {
       position: relative;
       z-index: 1;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 60ch; /* nicer line length */
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -226,6 +230,33 @@
     .callout.warning    { background: var(--callout-warning); }
     .callout.tip        { background: var(--callout-tip); }
     .callout.caution    { background: var(--callout-caution); }
+
+    /* Badge section */
+    .badges {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #0c152b;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.6rem 0.75rem;
+    }
+    .badge-item img {
+      max-height: 22px;
+    }
+    .badge-item code {
+      border: none;
+      background: transparent;
+      padding: 0;
+      color: var(--muted);
+      font-size: 0.9em;
+    }
 
     footer {
       margin-top: 2rem;
@@ -405,6 +436,38 @@ ___</code></pre>
     </section>
 
     <section>
+      <h2>🏷️ Badges (Shields.io examples)</h2>
+      <p>Use badges to add quick status and metadata to your README or site.</p>
+      <div class="badges">
+        <div class="badge-item">
+          <img alt="Build: passing" src="https://img.shields.io/badge/build-passing-success?style=for-the-badge">
+          <code>https://img.shields.io/badge/build-passing-success?style=for-the-badge</code>
+        </div>
+        <div class="badge-item">
+          <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue?style=flat-square">
+          <code>https://img.shields.io/badge/license-MIT-blue?style=flat-square</code>
+        </div>
+        <div class="badge-item">
+          <img alt="Version: v1.2.3" src="https://img.shields.io/badge/version-v1.2.3-9055FF?logo=semantic-release&logoColor=white">
+          <code>https://img.shields.io/badge/version-v1.2.3-9055FF?logo=semantic-release&logoColor=white</code>
+        </div>
+        <div class="badge-item">
+          <img alt="Docs" src="https://img.shields.io/badge/docs-available-36c?logo=readthedocs&logoColor=white">
+          <code>https://img.shields.io/badge/docs-available-36c?logo=readthedocs&logoColor=white</code>
+        </div>
+        <div class="badge-item">
+          <img alt="CI GitHub Actions" src="https://img.shields.io/github/actions/workflow/status/NoahDomingues/Markdown-Reference/ci.yml?label=CI&logo=github">
+          <code>https://img.shields.io/github/actions/workflow/status/USER/REPO/ci.yml?label=CI&logo=github</code>
+        </div>
+        <div class="badge-item">
+          <img alt="NPM" src="https://img.shields.io/npm/v/marked.svg?label=marked&color=cb3837&logo=npm">
+          <code>https://img.shields.io/npm/v/marked.svg?label=marked&color=cb3837&logo=npm</code>
+        </div>
+      </div>
+      <p>Markdown embed example: <code>![Build](https://img.shields.io/badge/build-passing-success)</code></p>
+    </section>
+
+    <section>
       <h2>🤝 Accessibility and best practices</h2>
       <ul>
         <li>Always include meaningful alt text for images</li>
@@ -501,7 +564,7 @@ ___</code></pre>
 
     <section>
       <h2>Further customization</h2>
-      <p>See the project GitHub: <a href="https://github.com/NoahDomingues/Glasgow-Uni-Notes" target="_blank" rel="noopener"><strong>Glasgow-Uni-Notes</strong></a></p>
+      <p>See the project GitHub: <a href="https://github.com/NoahDomingues/Markdown-Reference" target="_blank" rel="noopener"><strong>Markdown-Reference</strong></a></p>
     </section>
 
     <footer>
