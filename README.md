@@ -181,6 +181,6 @@ These are Markdown extensions used in GitHub, VS Code, Obsidian, MkDocs, Docusau
 
 ## Further Customization
 
-See the project GitHub: [**Glasgow-Uni-Notes**][project-link]
+See the project GitHub: [**Markdown-Reference**][project-link]
 
-[project-link]: https://github.com/NoahDomingues/Glasgow-Uni-Notes
+[project-link]: https://github.com/NoahDomingues/Markdown-Reference
